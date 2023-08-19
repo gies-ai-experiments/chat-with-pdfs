@@ -118,7 +118,6 @@ with gr.Blocks() as demo:
     interface.chatbot.value = get_first_message([])
 
 # demo.queue().launch(server_port=7861)
-#port = int(os.environ.get('PORT', 7861))
-#demo.queue().launch(share=True, server_port=port)
-demo.queue().launch(share=True,)
+port = int(os.environ.get('PORT', 7861))
+demo.queue().launch(server_name="0.0.0.0", server_port=port)
    
