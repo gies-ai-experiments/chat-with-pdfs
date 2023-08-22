@@ -114,7 +114,7 @@ with gr.Blocks() as demo:
     # textbox.submit(add_text, [chatbot, textbox], [chatbot, textbox]).then(
     #     streaming_chat, chatbot, chatbot
     # )
-    interface = gr.ChatInterface(fn=streaming_chat, title="Chat with Resumes", retry_btn=None, undo_btn=None, autofocus=True, stop_btn=None)
+    interface = gr.ChatInterface(fn=streaming_chat, title="Chat with MSBA Resumes", retry_btn=None, undo_btn=None, autofocus=True, stop_btn=None)
     interface.chatbot.value = get_first_message([])
 
 # demo.queue().launch(server_port=7861)
