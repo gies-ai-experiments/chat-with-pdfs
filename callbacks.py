@@ -37,6 +37,7 @@ class StreamingGradioCallbackHandler(BaseCallbackHandler):
     ) -> None:
         """Run when LLM errors."""
         print("on llm error")
+        self.q.put(f"The request has errored out with error: {error}")
         self.q.put(job_done)
 
     def on_chain_start(
@@ -53,6 +54,8 @@ class StreamingGradioCallbackHandler(BaseCallbackHandler):
     ) -> None:
         """Run when chain errors."""
         print("on chain error")
+        self.q.put(f"The request has errored out with error: {error}")
+        self.q.put(job_done)
 
     def on_tool_start(
         self, serialized: Dict[str, Any], input_str: str, **kwargs: Any

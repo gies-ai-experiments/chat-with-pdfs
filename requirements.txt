@@ -8,3 +8,5 @@ pdf2image
 pdfminer-six
 python-dotenv
 azure-storage-blob
+unstructured[doc]
+chromadb
